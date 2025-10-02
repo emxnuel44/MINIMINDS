@@ -1,0 +1,7 @@
+.animals-container{min-height:100vh;padding:72px 20px 28px;text-align:center;background:linear-gradient(135deg,#d4fc79 0%,#96e6a1 100%)}
+.animals-title{font-size:2.2rem;margin-bottom:20px;color:#1f2937}
+.animals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;max-width:1000px;margin:0 auto}
+.animal-card{background:white;border-radius:16px;padding:18px;box-shadow:0 8px 18px rgba(0,0,0,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .15s ease}
+.animal-card:hover{transform:scale(1.06)}
+.animal-emoji{font-size:2rem;line-height:1}
+.animal-name{margin-top:6px;font-weight:800}

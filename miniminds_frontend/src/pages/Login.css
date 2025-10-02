@@ -1,0 +1,131 @@
+/* Fondo degradado */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #4facfe, #e84fa7);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Tarjeta principal */
+.login-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Cabecera */
+.login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emoji {
+  font-size: 1.8rem;
+}
+
+.stars {
+  margin: 5px 0;
+  color: #ffcc00;
+  font-size: 1.2rem;
+}
+
+.welcome {
+  background: #ffe75e;
+  padding: 8px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Inputs */
+.input-group {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ddd;
+  padding: 8px 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.input-box:hover {
+  border-color: #4facfe;
+}
+
+.input-box span {
+  margin-right: 8px;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* Botones */
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #9c27b0, #e91e63);
+  color: #fff;
+  font-weight: bold;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+}
+
+.register-text {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: #fff;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  opacity: 0.9;
+}

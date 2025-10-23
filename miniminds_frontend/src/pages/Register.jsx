@@ -3,30 +3,35 @@ import { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-function Register({ setUser }) {
+function Register() {
     const [correo, setEmail] = useState("");
-    const [contraseña, setPassword] = useState("");
+    const [contrasena, setPassword] = useState("");
+    const [nombre, setNombre] = useState("");
+    const [telefono, setTelefono] = useState("");
 
     useEffect(() => {
         console.log("Login component mounted");
         console.log("correo:", correo);
-        console.log("contraseña:", contraseña);
-    }, [correo, contraseña]);
+        console.log("contraseña:", contrasena);
+        console.log("nombre:", nombre);
+        console.log("telefono:", telefono);
+    }, [nombre, correo, contrasena, telefono]);
 
-    const handleLogin = async () => {
+    const handleRegister = async () => {
         try {
             // Aquí iría la lógica para autenticar al usuario, por ejemplo:
-            const response = await fetch('http://localhost:4001/api/auth/login', {
+            const response = await fetch('http://localhost:4001/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ correo, contraseña }),
+                body: JSON.stringify({ correo, contrasena, nombre, telefono }),
             });
             const data = await response.json();
             if (data.success) {
-                setUser(data.user);
+                alert("Registro exitoso");
+                localStorage.setItem("user", JSON.stringify(data.user));
                 window.location.href = "/dashboard";
             } else {
-                alert("Credenciales inválidas");
+                alert("Error en el registro: " + data.message);
             }
         } catch (error) {
             console.error("Error during login:", error);
@@ -50,7 +55,7 @@ function Register({ setUser }) {
                     <label>Nombre</label>
                     <div className="input-box">
                         <span>📧</span>
-                        <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="nombre" />
+                        <input onChange={(e) => setNombre(e.target.value)} type="text" placeholder="nombre" />
                     </div>
                 </div>
 
@@ -69,14 +74,15 @@ function Register({ setUser }) {
                         <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Tu contraseña" />
                     </div>
                 </div>
-
-                <button onClick={handleLogin} className="btn-login">¡Iniciar Sesión!</button>
-
-                <p className="register-text">
-                    ¿No tienes cuenta?
-                </p>
-                <Link to="/register" className="register-link">
-                    <button className="btn-register">🚀 ¡Regístrate Aquí!</button></Link>
+                <div className="input-group">
+                    <label>Telefono</label>
+                    <div className="input-box">
+                        <span>�</span>
+                        <input onChange={(e) => setTelefono(e.target.value)} type="tel" placeholder="Tu teléfono" />
+                    </div>
+                </div>
+                
+                <button onClick={handleRegister} className="btn-register">🚀 ¡Regístrate Aquí!</button>
             </div>
         </div>
     );

@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
 export const Context = () => {
-    const user = localStorage.getItem("user");
-    //Validar si esta o no logueado
     useEffect(() => {
         const user = localStorage.getItem("user");
         if (!user) {

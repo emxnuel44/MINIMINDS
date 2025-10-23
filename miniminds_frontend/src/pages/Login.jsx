@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-function Login({ setUser }) {
+function Login() {
   const [correo, setEmail] = useState("");
-  const [contraseña, setPassword] = useState("");
+  const [contrasena, setPassword] = useState("");
 
   useEffect(() => {
     console.log("Login component mounted");
     console.log("correo:", correo);
-    console.log("contraseña:", contraseña);
-  }, [correo, contraseña]);
+    console.log("contraseña:", contrasena);
+  }, [correo, contrasena]);
 
   const handleLogin = async () => {
     try {
@@ -19,11 +19,12 @@ function Login({ setUser }) {
       const response = await fetch('http://localhost:4001/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ correo, contraseña }),
+        body: JSON.stringify({ correo, contrasena }),
       });
       const data = await response.json();
+      console.log('data', data);
       if (data.success) {
-        setUser(data.user);
+        localStorage.setItem("user", JSON.stringify(data.user));
         window.location.href = "/dashboard";
       } else {
         alert("Credenciales inválidas");

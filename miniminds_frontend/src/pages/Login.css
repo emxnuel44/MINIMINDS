@@ -1,4 +1,4 @@
-/* Fondo degradado */
+
 .login-container {
   height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Tarjeta principal */
+
 .login-card {
   background: #fff;
   padding: 2rem;
@@ -18,7 +18,7 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Cabecera */
+
 .login-header {
   display: flex;
   justify-content: center;

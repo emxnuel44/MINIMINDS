@@ -1,9 +1,16 @@
 const mysql = require('mysql');
+const dotenv = require('dotenv');
+dotenv.config();
+const HOST = process.env.PRODUCTION ? process.env.MYSQL_ADDON_HOST : 'localhost';
+const USER = process.env.PRODUCTION ? process.env.MYSQL_ADDON_USER : 'root';
+const PASSWORD = process.env.PRODUCTION ? process.env.MYSQL_ADDON_PASSWORD : '';
+const DATABASE = process.env.PRODUCTION ? process.env.MYSQL_ADDON_DB : 'miniminds';
+
 const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'miniminds',
+    host: HOST,
+    user: USER,
+    password: PASSWORD,
+    database: DATABASE  ,
     multipleStatements: true
 });
 

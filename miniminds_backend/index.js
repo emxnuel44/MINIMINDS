@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const categoriaRoutes = require('./routes/categorias');
 const autenticacionRoutes = require('./routes/autenticacion');
+const elementosRoutes = require('./routes/elementos');
 
 
 
@@ -18,6 +19,7 @@ app.use(express.json());
 //rutas
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/auth', autenticacionRoutes);
+app.use('/api/elementos', elementosRoutes);
 
 
 

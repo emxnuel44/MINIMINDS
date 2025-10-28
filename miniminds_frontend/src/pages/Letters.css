@@ -1,6 +1,53 @@
-.letters-container{min-height:100vh;padding:72px 20px 28px;text-align:center;background:linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%)}
-.letters-title{font-size:2.2rem;color:#1f2937;margin-bottom:20px}
-.letters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:14px;max-width:1000px;margin:0 auto}
-.letter-card{background:white;border-radius:16px;padding:18px;box-shadow:0 8px 18px rgba(0,0,0,.12);transition:transform .15s ease;display:grid;place-items:center}
-.letter-card:hover{transform:scale(1.06)}
-.letter{font-size:2rem;font-weight:900;color:#374151}
+.letters-container {
+  min-height: 100vh;
+  padding: 72px 20px 28px;
+  text-align: center;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.letters-title {
+  font-size: 2.2rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.letter-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter-card:hover {
+  transform: scale(1.06);
+}
+
+.letter-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.letter {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.letter-english {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+}

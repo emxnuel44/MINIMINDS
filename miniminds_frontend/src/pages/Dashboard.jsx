@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CategoryCard from '../components/CategoryCard';
 import { SiAnimalplanet } from "react-icons/si";
+import { CATEGORY_EMOJIS } from '../constants/emojis';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -11,14 +12,7 @@ function Dashboard() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const categoriesIcons = {
-    'Letras': '🔤',
-    'Números': '🔢',
-    'Animales': '🐶',
-    'Colores': '🎨',
-    'Cuerpo': '🧍',
-    'Comida': '🍎'
-  };
+  // Los emojis ahora vienen del diccionario importado
 
   useEffect(() => {
     (async () => {
@@ -58,7 +52,7 @@ function Dashboard() {
           <CategoryCard
             key={c.slug}
             name={c.nombre}
-            emoji={categoriesIcons[c.nombre] || '❓'}
+            emoji={CATEGORY_EMOJIS[c.nombre] || '❓'}
             iconUrl={c.icon_url}
             onClick={() => navigate(c.ruta || `/${c.slug}`)}
           />

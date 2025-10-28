@@ -1,10 +1,13 @@
 const mysql = require('mysql');
 const dotenv = require('dotenv');
 dotenv.config();
-const HOST = process.env.PRODUCTION ? process.env.MYSQL_ADDON_HOST : 'localhost';
-const USER = process.env.PRODUCTION ? process.env.MYSQL_ADDON_USER : 'root';
-const PASSWORD = process.env.PRODUCTION ? process.env.MYSQL_ADDON_PASSWORD : '';
-const DATABASE = process.env.PRODUCTION ? process.env.MYSQL_ADDON_DB : 'miniminds';
+console.log(process.env.PRODUCTION)
+const HOST = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_HOST : 'localhost';
+const USER = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_USER : 'root';
+const PASSWORD = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_PASSWORD : '';
+const DATABASE = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_DB : 'miniminds';
+
+console.log(HOST)
 
 const mysqlConnection = mysql.createConnection({
     host: HOST,

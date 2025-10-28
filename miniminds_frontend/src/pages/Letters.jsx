@@ -1,13 +1,47 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import ElementPageWrapper from '../components/ElementPageWrapper';
 import './Letters.css';
-function Letters(){ const navigate=useNavigate(); const letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+function Letters() {
+  const [letters, setLetters] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchLetters = async () => {
+      try {
+        const response = await fetch('http://localhost:4001/api/elementos/categoria/slug/letters');
+        if (!response.ok) {
+          throw new Error('Error al cargar letras');
+        }
+        const data = await response.json();
+        setLetters(data.elementos || []);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLetters();
+  }, []);
+
   return (
-    <div className="letters-container">
-      <button className="back-button" onClick={()=>navigate('/dashboard')}>← Volver</button>
-      <h2 className="letters-title">Aprende las Letras</h2>
-      <div className="letters-grid">{letters.map((l,i)=>(<div key={i} className="letter-card"><span className="letter">{l}</span></div>))}</div>
-    </div>
+    <ElementPageWrapper
+      title="Aprende las Letras"
+      elements={letters}
+      loading={loading}
+      error={error}
+      categoryName="Letras"
+      categoryId={6}
+      gridClassName="letters-grid"
+      cardClassName="letter-card"
+      emojiClassName="letter-emoji"
+      nameClassName="letter"
+      englishClassName="letter-english"
+      containerClassName="letters-container"
+    />
   );
 }
 export default Letters;

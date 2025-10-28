@@ -1,14 +1,48 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import ElementPageWrapper from '../components/ElementPageWrapper';
 import './Body.css';
-function Body(){ const navigate=useNavigate();
-  const bodyParts=[{emoji:'👀',name:'Ojos'},{emoji:'👂',name:'Orejas'},{emoji:'👃',name:'Nariz'},{emoji:'👄',name:'Boca'},{emoji:'🖐️',name:'Mano'},{emoji:'🦶',name:'Pie'}];
+
+function Body() {
+  const [bodyParts, setBodyParts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBodyParts = async () => {
+      try {
+        const response = await fetch('http://localhost:4001/api/elementos/categoria/slug/body');
+        if (!response.ok) {
+          throw new Error('Error al cargar partes del cuerpo');
+        }
+        const data = await response.json();
+        setBodyParts(data.elementos || []);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBodyParts();
+  }, []);
+
   return (
-    <div className="body-container">
-      <button className="back-button" onClick={()=>navigate('/dashboard')}>← Volver</button>
-      <h2 className="body-title">Aprende el Cuerpo</h2>
-      <div className="body-grid">{bodyParts.map((b,i)=>(<div key={i} className="body-card"><span className="body-emoji">{b.emoji}</span><span className="body-name">{b.name}</span></div>))}</div>
-    </div>
+    <ElementPageWrapper
+      title="Aprende el Cuerpo"
+      elements={bodyParts}
+      loading={loading}
+      error={error}
+      categoryName="Cuerpo"
+      categoryId={4}
+      gridClassName="body-grid"
+      cardClassName="body-card"
+      emojiClassName="body-emoji"
+      nameClassName="body-name"
+      englishClassName="body-english"
+      containerClassName="body-container"
+    />
   );
 }
+
 export default Body;

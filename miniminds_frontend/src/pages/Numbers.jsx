@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getElementEmoji } from '../constants/emojis';
+import ElementPageWrapper from '../components/ElementPageWrapper';
 import './Numbers.css';
 
 function Numbers() {
-  const navigate = useNavigate();
   const [numbers, setNumbers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,25 +27,21 @@ function Numbers() {
     fetchNumbers();
   }, []);
 
-  if (loading) return <div className="numbers-container">Cargando números...</div>;
-  if (error) return <div className="numbers-container">Error: {error}</div>;
-
   return (
-    <div className="numbers-container">
-      <button className="back-button" onClick={() => navigate('/dashboard')}>← Volver</button>
-      <h2 className="numbers-title">Aprende los Números</h2>
-      <div className="numbers-grid">
-        {numbers.map((number, i) => (
-          <div key={i} className="number-card">
-            <span className="number-emoji">
-              {getElementEmoji('Números', number.nombre)}
-            </span>
-            <span className="number">{number.nombre}</span>
-            <span className="number-english">{number.nombre_ingles}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ElementPageWrapper
+      title="Aprende los Números"
+      elements={numbers}
+      loading={loading}
+      error={error}
+      categoryName="Números"
+      categoryId={1}
+      gridClassName="numbers-grid"
+      cardClassName="number-card"
+      emojiClassName="number-emoji"
+      nameClassName="number"
+      englishClassName="number-english"
+      containerClassName="numbers-container"
+    />
   );
 }
 export default Numbers;

@@ -64,24 +64,24 @@ export const LETTER_EMOJIS = {
 export const ANIMAL_EMOJIS = {
   'Perro': '🐶',
   'Gato': '🐱',
-  'Pájaro': '🐦',
-  'Pez': '🐠',
   'Conejo': '🐰',
-  'Oso': '🐻',
-  'Elefante': '🐘',
   'León': '🦁',
-  'Tigre': '🐅',
+  'Vaca': '🐮',
   'Caballo': '🐴',
-  'Vaca': '🐄',
-  'Cerdo': '🐷',
   'Oveja': '🐑',
-  'Cabra': '🐐',
+  'Cerdo': '🐷',
+  'Pollo': '🐔',
   'Pato': '🦆',
-  'Gallina': '🐔',
-  'Pollo': '🐓',
-  'Pavo': '🦃',
-  'Rana': '🐸',
-  'Tortuga': '🐢'
+  'Elefante': '🐘',
+  'Jirafa': '🦒',
+  'Mono': '🐵',
+  'Tigre': '🐅',
+  'Oso': '🐻',
+  'Panda': '🐼',
+  'Pingüino': '🐧',
+  'Delfín': '🐬',
+  'Ballena': '🐋',
+  'Mariposa': '🦋'
 };
 
 // Diccionario de emojis para elementos (colores)
@@ -117,75 +117,53 @@ export const COLOR_EMOJIS = {
   'Chocolate': '🤎'
 };
 
-// Diccionario de emojis para elementos (cuerpo)
-export const BODY_EMOJIS = {
-  'Cabeza': '👤',
-  'Ojos': '👀',
-  'Nariz': '👃',
-  'Boca': '👄',
-  'Orejas': '👂',
-  'Manos': '✋',
-  'Pies': '🦶',
-  'Piernas': '🦵',
-  'Brazos': '💪',
-  'Dedos': '👆',
-  'Cara': '😊',
-  'Cabello': '💇',
-  'Dientes': '🦷',
-  'Lengua': '👅',
-  'Cejas': '🤨',
-  'Pestañas': '👁️',
-  'Mejillas': '😊',
-  'Barbilla': '👤',
-  'Frente': '🤔',
-  'Cuello': '👤'
-};
 
 // Diccionario de emojis para elementos (comida)
 export const FOOD_EMOJIS = {
   'Manzana': '🍎',
   'Plátano': '🍌',
   'Naranja': '🍊',
-  'Uvas': '🍇',
-  'Fresa': '🍓',
-  'Sandía': '🍉',
-  'Piña': '🍍',
-  'Cereza': '🍒',
-  'Melocotón': '🍑',
-  'Pera': '🍐',
+  'Uva': '🍇',
   'Pan': '🍞',
-  'Queso': '🧀',
   'Leche': '🥛',
+  'Queso': '🧀',
   'Huevo': '🥚',
-  'Pollo': '🍗',
-  'Pescado': '🐟',
   'Carne': '🥩',
+  'Pescado': '🐟',
+  'Pollo': '🍗',
   'Arroz': '🍚',
   'Pasta': '🍝',
   'Pizza': '🍕',
   'Hamburguesa': '🍔',
-  'Hot Dog': '🌭',
-  'Ensalada': '🥗',
-  'Sopa': '🍲',
-  'Helado': '🍦',
-  'Pastel': '🍰',
-  'Galleta': '🍪',
-  'Chocolate': '🍫',
-  'Dulce': '🍬'
+  'Zanahoria': '🥕',
+  'Tomate': '🍅',
+  'Lechuga': '🥬',
+  'Patata': '🥔',
+  'Cebolla': '🧅'
 };
 
 // Diccionario de emojis para elementos (sílabas)
 export const SYLLABLE_EMOJIS = {
   'MA': '📝',
   'PA': '📝',
-  'TA': '📝',
-  'CA': '📝',
   'SA': '📝',
-  'NA': '📝',
   'LA': '📝',
-  'RA': '📝',
+  'TA': '📝',
+  'NA': '📝',
+  'CA': '📝',
+  'BA': '📝',
   'DA': '📝',
-  'GA': '📝'
+  'GA': '📝',
+  'ME': '📝',
+  'PE': '📝',
+  'SE': '📝',
+  'LE': '📝',
+  'TE': '📝',
+  'NE': '📝',
+  'CE': '📝',
+  'BE': '📝',
+  'DE': '📝',
+  'GE': '📝'
 };
 
 // Diccionario de emojis para elementos (partes del hogar)
@@ -194,40 +172,65 @@ export const HOME_EMOJIS = {
   'Sala': '🛋️',
   'Dormitorio': '🛏️',
   'Baño': '🚿',
-  'Jardín': '🌻',
+  'Jardín': '🌱',
   'Garaje': '🚗',
-  'Comedor': '🍽️',
-  'Oficina': '💻',
+  'Sótano': '🏗️',
+  'Ático': '🏘️',
   'Balcón': '🌅',
-  'Sótano': '🏠'
+  'Terraza': '🌞',
+  'Comedor': '🍽️',
+  'Despensa': '🥫',
+  'Lavandería': '🧺',
+  'Oficina': '💼',
+  'Sala de Juegos': '🎮',
+  'Vestíbulo': '🚶',
+  'Escaleras': '🪜',
+  'Puerta': '🚪',
+  'Ventana': '🪟',
+  'Techo': '🏠'
 };
 
 // Diccionario de emojis para elementos (objetos)
 export const OBJECT_EMOJIS = {
   'Mesa': '🪑',
   'Silla': '🪑',
-  'Libro': '📚',
-  'Pelota': '⚽',
-  'Juguete': '🧸',
-  'Teléfono': '📱',
-  'Computadora': '💻',
-  'Televisión': '📺',
   'Cama': '🛏️',
-  'Lámpara': '💡'
+  'Lámpara': '💡',
+  'Televisión': '📺',
+  'Teléfono': '📱',
+  'Libro': '📚',
+  'Juguete': '🧸',
+  'Pelota': '⚽',
+  'Muñeca': '👸',
+  'Coche': '🚗',
+  'Avión': '✈️',
+  'Barco': '🚤',
+  'Bicicleta': '🚲',
+  'Tren': '🚂',
+  'Casa': '🏠',
+  'Escuela': '🏫',
+  'Hospital': '🏥',
+  'Parque': '🌳',
+  'Tienda': '🏪'
 };
 
 // Diccionario de emojis para elementos (familia)
 export const FAMILY_EMOJIS = {
   'Mamá': '👩',
   'Papá': '👨',
-  'Hermano': '👦',
   'Hermana': '👧',
-  'Abuelo': '👴',
+  'Hermano': '👦',
   'Abuela': '👵',
-  'Tío': '👨',
+  'Abuelo': '👴',
   'Tía': '👩',
+  'Tío': '👨',
+  'Prima': '👧',
   'Primo': '👦',
-  'Prima': '👧'
+  'Bebé': '👶',
+  'Bisabuela': '👵',
+  'Bisabuelo': '👴',
+  'Sobrina': '👧',
+  'Sobrino': '👦'
 };
 
 // Diccionario de emojis para elementos (climas)
@@ -241,7 +244,12 @@ export const WEATHER_EMOJIS = {
   'Tormenta': '⛈️',
   'Niebla': '🌫️',
   'Arcoíris': '🌈',
-  'Nieve': '❄️'
+  'Nieve': '❄️',
+  'Fogoso': '🌫️',
+  'Granizo': '🌨️',
+  'Templado': '🌤️',
+  'Húmedo': '💧',
+  'Cálido': '🌡️'
 };
 
 // Diccionario de emojis para elementos (horas)
@@ -257,7 +265,19 @@ export const TIME_EMOJIS = {
   '9:00': '🕘',
   '10:00': '🕙',
   '11:00': '🕚',
-  '12:00': '🕛'
+  '12:00': '🕛',
+  '1:30': '🕐',
+  '2:30': '🕑',
+  '3:30': '🕒',
+  '4:30': '🕓',
+  '5:30': '🕔',
+  '6:30': '🕕',
+  '7:30': '🕖',
+  '8:30': '🕗',
+  '9:30': '🕘',
+  '10:30': '🕙',
+  '11:30': '🕚',
+  '12:30': '🕛'
 };
 
 // Diccionario de emojis para elementos (buenos modales)
@@ -271,7 +291,36 @@ export const MANNERS_EMOJIS = {
   'Buenos días': '🌅',
   'Buenas tardes': '🌆',
   'Buenas noches': '🌙',
-  'Disculpe': '😅'
+  'Disculpe': '😅',
+  'Con permiso': '🙏',
+  'Perdóname': '😔',
+  'Excúsame': '😅',
+  'Bienvenido': '👋',
+  'Lo siento': '😔'
+};
+
+// Diccionario de emojis para elementos (cuerpo)
+export const BODY_EMOJIS = {
+  'Ojo': '👁️',
+  'Orejas': '👂',
+  'Nariz': '👃',
+  'Boca': '👄',
+  'Mano': '🤚',
+  'Pie': '🦶',
+  'Brazo': '💪',
+  'Pierna': '🦵',
+  'Cabeza': '👤',
+  'Cuello': '🦴',
+  'Hombro': '🦴',
+  'Codo': '🦴',
+  'Muñeca': '🦴',
+  'Dedo': '👆',
+  'Diente': '🦷',
+  'Lengua': '👅',
+  'Cejas': '🤨',
+  'Pestañas': '👁️',
+  'Barbilla': '👤',
+  'Mejilla': '😊'
 };
 
 // Función para obtener emoji por categoría y nombre
@@ -303,6 +352,8 @@ export const getElementEmoji = (categoria, nombre) => {
       return TIME_EMOJIS[nombre] || '🕐';
     case 'Buenos Modales':
       return MANNERS_EMOJIS[nombre] || '🙏';
+    case 'Cuerpo':
+      return BODY_EMOJIS[nombre] || '🧍';
     default:
       return '❓';
   }

@@ -4,6 +4,7 @@ const cors = require('cors');
 const categoriaRoutes = require('./routes/categorias');
 const autenticacionRoutes = require('./routes/autenticacion');
 const elementosRoutes = require('./routes/elementos');
+const usuarioElementosRoutes = require('./routes/usuario_elementos');
 
 
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/auth', autenticacionRoutes);
 app.use('/api/elementos', elementosRoutes);
+app.use('/api/usuario-elementos', usuarioElementosRoutes);
 
 
 

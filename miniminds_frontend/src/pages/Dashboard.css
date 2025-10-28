@@ -24,3 +24,8 @@
   height: auto;
   color: #2b7a78;
 }
+
+/* Asegurar que el contenido no se superponga con el botón de cerrar sesión */
+.dashboard-container {
+  padding-bottom: 40px; /* Espacio adicional para el botón */
+}

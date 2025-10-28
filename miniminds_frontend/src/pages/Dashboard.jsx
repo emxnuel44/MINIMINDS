@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CategoryCard from '../components/CategoryCard';
-import { SiAnimalplanet } from "react-icons/si";
+import CerrarSesion from '../components/CerrarSesion';
+
 import { CATEGORY_EMOJIS } from '../constants/emojis';
 import './Dashboard.css';
 
@@ -40,9 +41,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <header className="dashboard-header">
-        <SiAnimalplanet className="dashboard-logo-icon" />
-      </header>
+      
 
       <h1 className="dashboard-logo">MINIMINDS</h1>
       <h2 className="dashboard-title">Bienvenido {user?.nombre || 'Usuario'}</h2>
@@ -58,6 +57,8 @@ function Dashboard() {
           />
         ))}
       </div>
+      
+      <CerrarSesion />
     </div>
   );
 }

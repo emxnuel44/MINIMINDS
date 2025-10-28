@@ -1,28 +1,52 @@
 
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getElementEmoji } from '../constants/emojis';
+import ColorsPageWrapper from '../components/ColorsPageWrapper';
 import './Colors.css';
 
 function Colors() {
-  const navigate = useNavigate();
   const [colors, setColors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Diccionario de códigos de colores
   const colorCodes = {
+    // Colores básicos
     'Rojo': '#ff4d4d',
     'Verde': '#4dff4d',
     'Azul': '#4d4dff',
     'Amarillo': '#ffff4d',
     'Naranja': '#ffa64d',
     'Morado': '#b84dff',
-    'Rosa': '#ff69b4',
-    'Café': '#8b4513',
-    'Gris': '#808080',
+    'Marrón': '#8b4513',
     'Negro': '#000000',
-    'Blanco': '#ffffff'
+    'Blanco': '#ffffff',
+    'Rosa': '#ff69b4',
+    'Gris': '#808080',
+    
+    // Colores claros
+    'Azul Claro': '#87ceeb',
+    'Rojo Claro': '#ffb3ba',
+    'Verde Claro': '#90ee90',
+    'Amarillo Claro': '#ffffe0',
+    'Naranja Claro': '#ffd700',
+    'Morado Claro': '#dda0dd',
+    'Marrón Claro': '#d2b48c',
+    
+    // Colores oscuros
+    'Azul Oscuro': '#000080',
+    'Rojo Oscuro': '#8b0000',
+    'Verde Oscuro': '#006400',
+    'Azul Marino': '#000080',
+    
+    // Colores especiales
+    'Amarillo Dorado': '#ffd700',
+    'Naranja Dorado': '#ff8c00',
+    'Violeta': '#8a2be2',
+    'Beige': '#f5f5dc',
+    'Turquesa': '#40e0d0',
+    'Lima': '#32cd32',
+    'Dorado': '#ffd700',
+    'Plateado': '#c0c0c0'
   };
 
   useEffect(() => {
@@ -45,29 +69,16 @@ function Colors() {
     fetchColors();
   }, []);
 
-  if (loading) return <div className="colors-container">Cargando colores...</div>;
-  if (error) return <div className="colors-container">Error: {error}</div>;
-
   return (
-    <div className="colors-container">
-      <button className="back-button" onClick={() => navigate('/dashboard')}>← Volver</button>
-      <h2 className="colors-title">Aprende los Colores</h2>
-      <div className="colors-grid">
-        {colors.map((color, i) => (
-          <div 
-            key={i} 
-            className="color-card" 
-            style={{ background: colorCodes[color.nombre] || '#cccccc' }}
-          >
-            <span className="color-emoji">
-              {getElementEmoji('Colores', color.nombre)}
-            </span>
-            <span className="color-name">{color.nombre}</span>
-            <span className="color-english">{color.nombre_ingles}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ColorsPageWrapper
+      title="Aprende los Colores"
+      elements={colors}
+      loading={loading}
+      error={error}
+      categoryName="Colores"
+      categoryId={3}
+      colorCodes={colorCodes}
+    />
   );
 }
 export default Colors;

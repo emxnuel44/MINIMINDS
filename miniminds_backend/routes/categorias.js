@@ -3,7 +3,7 @@ const router = Router();
 const mysqlConnection= require('../db');
 
 router.get('/', (req, res)=>{
-    mysqlConnection.query('SELECT * FROM categorías', (err, rows, fields)=>{
+    mysqlConnection.query('SELECT * FROM categorias', (err, rows, fields)=>{
         if(!err) {
             res.json(rows);
         }else {

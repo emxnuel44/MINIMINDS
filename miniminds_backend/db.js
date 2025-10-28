@@ -7,7 +7,10 @@ const USER = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_USER : 
 const PASSWORD = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_PASSWORD : '';
 const DATABASE = process.env.PRODUCTION === 'true' ? process.env.MYSQL_ADDON_DB : 'miniminds';
 
-console.log(HOST)
+console.log("HOST:",HOST)
+console.log("USER:",USER)
+console.log("PASSWORD:",PASSWORD)
+console.log("DATABASE:",DATABASE)
 
 const mysqlConnection = mysql.createConnection({
     host: HOST,
